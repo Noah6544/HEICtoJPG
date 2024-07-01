@@ -2,8 +2,14 @@ import os
 from wand.image import Image
 
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nMake sure you're HEIC image folder is EMPTY!\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-heic_image_path = input("Enter HEIC Image Path: ") + "\\"
-final_image_path = input("Enter Output Folder Path: ") + "\\"
+heic_image_path = input("Enter HEIC Image Path (Enter nothing for /Input) ") + "\\"
+final_image_path = input("Enter Output Folder Path (Enter nothing for /Output): ") + "\\"
+if final_image_path == "\\":
+    final_image_path = "Output\\"
+
+if heic_image_path == "\\":
+    heic_image_path = "Input\\"
+
  
 count = 0
 for file in os.listdir(heic_image_path): #change to enumerate sometime idk
